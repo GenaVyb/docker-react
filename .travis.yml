@@ -9,6 +9,7 @@ script:
     - docker run -e CI=true genavyb1/docker-react npm run test
 
 deploy:
+    edge: true
     provider: elasticbeanstalk
     region: "us-east-2"
     app: "docker1"
@@ -17,7 +18,7 @@ deploy:
     bucket_path: "docker1"
     on:
         branch: master
-    access_key_id: "$AWS_ACCESS_KEY"
-    secret_access_key: "$AWS_SECRET_KEY"
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
 
 
